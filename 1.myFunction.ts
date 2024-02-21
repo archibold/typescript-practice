@@ -24,5 +24,8 @@ type cardDetails = cardNumber & cardDate & {
     cvv: number
 }
 
+// type somethingelse = number & string & {
+//     ff: number
+// }
 
 function createUser(user: User){}
