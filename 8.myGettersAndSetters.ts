@@ -1,5 +1,6 @@
 class CarUser {
     private _courseCount = 1
+    protected _innerCounter = 1
     readonly city: string
     constructor(
         public email: string,
@@ -10,11 +11,9 @@ class CarUser {
     get getAppleEmail(): string {
         return `apple${this.email}`
     }
-
     get getCourseCount(): number {
         return this._courseCount
     }
-
     private deleteToken() {
         console.log("Token deleted")
     }
@@ -26,6 +25,13 @@ class CarUser {
             throw new Error("Course count should be more than 1")
         }
         this._courseCount = courseNum;
+    }
+}
+
+class AudiUser extends CarUser {
+    isFamily: boolean = true
+    changeCourseCount() {
+        this._innerCounter = 4
     }
 }
 
